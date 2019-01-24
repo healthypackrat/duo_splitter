@@ -1,3 +1,4 @@
+require "duo_splitter/sentence"
 require "duo_splitter/version"
 
 module DuoSplitter
