@@ -6,6 +6,12 @@ module DuoSplitter
       @sections = load_sections
     end
 
+    def sentences(intro: true)
+      sections.map(&:sentences).flatten.reject do |sentence|
+        !intro && sentence.intro?
+      end
+    end
+
     private
 
     def load_sections

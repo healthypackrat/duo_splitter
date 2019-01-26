@@ -2,6 +2,8 @@ module DuoSplitter
   class Section
     attr_reader :number, :sentences
 
+    attr_accessor :source_path
+
     def initialize(number:)
       @number = number
       @sentences = load_sentences
@@ -21,7 +23,7 @@ module DuoSplitter
         start_pos = current_record.first
         end_pos = next_record.first
 
-        Sentence.new(number: sentence_number, start_pos: start_pos, end_pos: end_pos)
+        Sentence.new(number: sentence_number, start_pos: start_pos, end_pos: end_pos, section: self)
       end
     end
   end

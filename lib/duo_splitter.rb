@@ -1,7 +1,13 @@
 require "duo_splitter/album"
 require "duo_splitter/section"
 require "duo_splitter/sentence"
+
+require "duo_splitter/encoder"
+require "duo_splitter/wav_encoder"
+
 require "duo_splitter/version"
+
+require 'pathname'
 
 module DuoSplitter
   class Error < StandardError; end

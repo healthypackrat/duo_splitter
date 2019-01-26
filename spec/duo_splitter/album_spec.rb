@@ -5,6 +5,21 @@ RSpec.describe DuoSplitter::Album do
     expect(album.sections.size).to eq(45)
   end
 
+  describe "#sentences" do
+    context "when intro is true" do
+      it "has 560 + 45 sentences" do
+        expect(album.sentences.size).to eq(560 + 45)
+        expect(album.sentences(intro: true).size).to eq(560 + 45)
+      end
+    end
+
+    context "when intro is false" do
+      it "has 560 sentences" do
+        expect(album.sentences(intro: false).size).to eq(560)
+      end
+    end
+  end
+
   it "doesn't have duplicate or missing sentences" do
     sentence_counts = 1.upto(DuoSplitter::NUMBER_OF_SENTENCES).each_with_object({}) {|n, memo| memo[n] = 0 }
     intro_counts = 1.upto(DuoSplitter::NUMBER_OF_SECTIONS).each_with_object({}) {|n, memo| memo[n] = 0 }
