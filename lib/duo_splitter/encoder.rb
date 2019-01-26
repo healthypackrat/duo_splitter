@@ -2,6 +2,16 @@ require 'pathname'
 
 module DuoSplitter
   class Encoder
+    class << self
+      def known_encoders
+        @known_encoders ||= {}
+      end
+
+      def register(key, encoder)
+        known_encoders[key] = encoder
+      end
+    end
+
     def initialize(album:, output_dir:, output_intro:, add_section_prefix:, ffmpeg_path:)
       @album = album
       @output_dir = Pathname.new(output_dir)

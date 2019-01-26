@@ -8,4 +8,6 @@ module DuoSplitter
       @encoding_options = ['-codec:a', 'libmp3lame', '-q:a', '0']
     end
   end
+
+  Encoder.register(:mp3, MP3Encoder)
 end

@@ -8,4 +8,6 @@ module DuoSplitter
       @encoding_options = ['-codec:a', 'aac', '-b:a', '256k']
     end
   end
+
+  Encoder.register(:aac, AACEncoder)
 end

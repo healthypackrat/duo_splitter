@@ -8,4 +8,6 @@ module DuoSplitter
       @encoding_options = ['-codec:a', 'pcm_s16le']
     end
   end
+
+  Encoder.register(:wav, WAVEncoder)
 end
