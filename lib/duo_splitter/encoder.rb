@@ -25,13 +25,22 @@ module DuoSplitter
 
       @output_dir.mkpath
 
-      commands.each do |command|
-        unless system(*command)
-          raise Error, "process exit with #{$?.exitstatus}"
+      commands.each.with_index(1) do |command, index|
+        $stderr.print "proccessing #{index}/#{commands.size}\r"
+
+        shell_output = IO.popen(command, err: [:child, :out]) {|io| io.read }
+
+        status = $?.exitstatus
+
+        unless status.zero?
+          $stderr.print "\n"
+          $stderr.print "#{shell_output}\n"
+          raise Error, "process exit with #{status}"
         end
       end
 
-      puts "\u{1F37A} done."
+      $stderr.print "\n"
+      $stderr.print "\u{1F37A} done.\n"
     end
 
     def to_commands
