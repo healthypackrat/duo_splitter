@@ -7,6 +7,8 @@ require "duo_splitter/aac_encoder"
 require "duo_splitter/mp3_encoder"
 require "duo_splitter/wav_encoder"
 
+require "duo_splitter/runner"
+
 require "duo_splitter/version"
 
 require 'pathname'
