@@ -23,6 +23,8 @@ module DuoSplitter
     def run
       commands = to_commands
 
+      return if commands.empty?
+
       @output_dir.mkpath
 
       commands.each.with_index(1) do |command, index|
