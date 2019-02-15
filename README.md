@@ -1,38 +1,31 @@
-# DuoSplitter
+# `duo_splitter`
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/duo_splitter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem provides a command to split the tracks into each sentences from [DUO 3.0 CD](https://www.amazon.co.jp/dp/4900790079)
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'duo_splitter'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install duo_splitter
+$ gem install duo_splitter
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Usage: duo_splitter [options] "01 Track 01.wav" "02 Track 02.wav" ... "45 Track 45.wav"
+    -d, --output-dir=PATH            Output directory (default: /Users/yzn/Desktop/DUO 3.0)
+    -f, --format=FORMAT              Output format (default: wav; one of aac, mp3, wav)
+        --[no-]output-intro          Output intro track (default: true)
+        --[no-]section-number        Add section number to output name (default: true)
+        --ffmpeg-path=PATH           Path to ffmpeg command (default: ffmpeg)
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Run `bin/rspec` to run the specs.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/duo_splitter.
+Bug reports and pull requests are welcome on GitHub at <https://github.com/healthypackrat/duo_splitter>.
 
 ## License
 
