@@ -1,5 +1,7 @@
 # `duo_splitter`
 
+[![Build Status](https://travis-ci.org/healthypackrat/duo_splitter.svg?branch=master)](https://travis-ci.org/healthypackrat/duo_splitter)
+
 This gem provides a command to split the tracks into each sentences from [DUO 3.0 CD](https://www.amazon.co.jp/dp/4900790079)
 
 ## Installation
