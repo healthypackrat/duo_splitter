@@ -12,7 +12,7 @@ RSpec.describe DuoSplitter::Encoder do
     end
 
     it "raises a NotImplementedError" do
-      expect { encoder.to_commands }.to raise_error(NotImplementedError)
+      expect { encoder.to_commands }.to raise_error(DuoSplitter::Error)
     end
   end
 

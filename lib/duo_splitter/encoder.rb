@@ -61,11 +61,11 @@ module DuoSplitter
     end
 
     def ext
-      raise NotImplementedError, '#ext must be defined in a sub class'
+      raise Error, '#ext must be defined in a sub class'
     end
 
     def encoding_options
-      raise NotImplementedError, '#encoding_options must be defined in a sub class'
+      raise Error, '#encoding_options must be defined in a sub class'
     end
   end
 end
