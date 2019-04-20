@@ -1,3 +1,5 @@
+[Read this README in Japanese (日本語で読む)](README.ja.md)
+
 # `duo_splitter`
 
 [![Build Status](https://travis-ci.org/healthypackrat/duo_splitter.svg?branch=master)](https://travis-ci.org/healthypackrat/duo_splitter)
