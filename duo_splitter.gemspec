@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   # The `git ls-files -z` loads the files in the RubyGem that have been added
   # into git.
   spec.files         = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(lib|data|exe)/}) }
+    `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(assets|data|exe|lib)/}) }
   end
   spec.files        += ['README.md', 'README.ja.md']
 
