@@ -110,13 +110,13 @@ $ duo_splitter overlapping *.wav
 合図の音声を変更するには`--notification-sound-path`オプションを指定してください:
 
 ```
-$ duo_splitter repeating --notification-sound-path=/path/to/audio.wav *.wav
+$ duo_splitter overlapping --notification-sound-path=/path/to/audio.wav *.wav
 ```
 
 `sox`の場所を変更するには`--sox-path`オプションを指定してください:
 
 ```
-$ duo_splitter repeating --sox-path=/path/to/sox *.wav
+$ duo_splitter overlapping --sox-path=/path/to/sox *.wav
 ```
 
 ## 開発
