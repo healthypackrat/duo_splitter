@@ -1,20 +1,21 @@
-RSpec.describe DuoSplitter::Album do
+# frozen_string_literal: true
+
+RSpec.describe DuoSplitter::Models::Album do
   let(:album) { described_class.new }
 
-  it "has 45 sections" do
+  it 'has 45 sections' do
     expect(album.sections.size).to eq(45)
   end
 
-  describe "#sentences" do
-    context "when intro is true" do
-      it "has 560 + 45 sentences" do
-        expect(album.sentences.size).to eq(560 + 45)
+  describe '#sentences' do
+    context 'when "intro" is true' do
+      it 'returns 560 + 45 sentences' do
         expect(album.sentences(intro: true).size).to eq(560 + 45)
       end
     end
 
-    context "when intro is false" do
-      it "has 560 sentences" do
+    context 'when "intro" is false' do
+      it 'returns 560 sentences' do
         expect(album.sentences(intro: false).size).to eq(560)
       end
     end
@@ -40,7 +41,7 @@ RSpec.describe DuoSplitter::Album do
     duplicate_intro = intro_counts.select {|_, v| v > 1 }
     missing_intro = intro_counts.select {|_, v| v == 0 }
 
-    aggregate_failures "duplicate or missing" do
+    aggregate_failures 'duplicate or missing' do
       expect(duplicate_sentences).to be_empty
       expect(missing_sentences).to be_empty
 
