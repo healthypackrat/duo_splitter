@@ -8,6 +8,9 @@ module DuoSplitter
 
         def initialize(context:)
           @context = context
+
+          raise Error, "temp_dir isn't set" unless @context.temp_dir
+
           @commands = build_commands
         end
 
