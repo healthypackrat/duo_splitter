@@ -22,7 +22,7 @@ module DuoSplitter
         number.zero?
       end
 
-      def output_basename(prefix_section_number: true, blank: false, concatenated: false, ext:)
+      def output_basename(ext:, prefix_section_number: true, blank: false, concatenated: false)
         basename = format('%03<number>d', number: number)
         basename = "#{basename}_blank" if blank
         basename = "#{basename}_concatenated" if concatenated
