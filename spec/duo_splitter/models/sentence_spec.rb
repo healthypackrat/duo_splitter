@@ -2,7 +2,7 @@
 
 RSpec.describe DuoSplitter::Models::Sentence do
   let(:section) { double('section', number: 1) }
-  let(:args) { Hash[number: 1, start_pos: '3.0', end_pos: '5.0', section: section] }
+  let(:args) { { number: 1, start_pos: '3.0', end_pos: '5.0', section: section } }
   let(:sentence) { described_class.new(**args) }
 
   it 'has a number' do
